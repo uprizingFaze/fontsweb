@@ -12,8 +12,12 @@ def index() -> rx.Component:
     return rx.box(
         rx.text("by uprizingFaze", class_name="text-xl text-neutral-700 ml-4"),
         rx.box(
-            rx.text("FONTS", class_name="text-9xl text-neutral-700 text-center font-bold"),
-            rx.text("DESINGS", class_name="text-9xl text-neutral-700 text-center font-bold"),
+            rx.text(
+                "FONTS", class_name="text-9xl text-neutral-700 text-center font-bold"
+            ),
+            rx.text(
+                "DESINGS", class_name="text-9xl text-neutral-700 text-center font-bold"
+            ),
             direction="column",
             align_items="center",
             margin_y="4rem",
@@ -60,7 +64,10 @@ def index() -> rx.Component:
             ),
             rx.box(
                 rx.text("License", class_name="text-neutral-700"),
-                rx.text("Free for commercial use.", class_name="py-6 text-2xl text-neutral-700"),
+                rx.text(
+                    "Free for commercial use.",
+                    class_name="py-6 text-2xl text-neutral-700",
+                ),
                 class_name="ring-1 ring-neutral-300 rounded-3xl p-4",
             ),
             direction="grid",
@@ -68,6 +75,96 @@ def index() -> rx.Component:
             gap="2",
             padding="2",
         ),
+        # Numeros
+        rx.box(
+            rx.text("Numeros", class_name="text-7xl text-center py-24"),
+            rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
+            rx.box(
+                rx.text("0 1 2 3 4 5 6 7 8 9", class_name="text-7xl ml-8"),
+                rx.box(
+                    rx.text("Size: 128px", class_name="text-xl"),
+                    direction="column",
+                ),
+                direction="row",
+                justify_content="between",
+            ),
+            rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
+            direction="column",
+        ),
+        # Tamaños
+        rx.box(
+            rx.text("Tamaños", class_name="text-7xl text-center py-24"),
+            rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
+            rx.box(
+                rx.text("Text-9xl", class_name="text-9xl ml-8"),
+                rx.box(
+                    rx.text("Size: 128px", class_name="text-xl"),
+                    direction="column",
+                ),
+                direction="row",
+                justify_content="between",
+            ),
+            rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
+            rx.box(
+                rx.text("Text-8xl", class_name="text-8xl ml-8"),
+                rx.box(
+                    rx.text("Size: 96px", class_name="text-xl"),
+                    direction="column",
+                ),
+                direction="row",
+                justify_content="between",
+            ),
+            direction="column",
+            id="size",
+        ),
+        #Estilo
+        rx.box(
+            rx.box(
+                rx.text("Estilo", class_name="text-7xl text-center py-24"),
+                rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
+                rx.box(
+                    rx.text("Italic", class_name="text-7xl ml-8 italic"),
+                    direction="row",
+                    justify_content="between",
+                ),
+                rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
+                rx.box(
+                    rx.text("Not italic", class_name="text-7xl ml-8 not-italic"),
+                    direction="row",
+                    justify_content="between",
+                ),
+                rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
+                direction="column",
+                id="family",
+            ),
+            rx.box(
+                rx.text("Peso", class_name="text-7xl text-center py-24"),
+                rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
+                rx.box(
+                    rx.text("Light", class_name="text-7xl ml-8 font-light"),
+                    direction="row",
+                    justify_content="between",
+                ),
+                rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
+                rx.box(
+                    rx.text("Medium", class_name="text-7xl ml-8 font-medium"),
+                    direction="row",
+                    justify_content="between",
+                ),
+                rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
+                rx.box(
+                    rx.text("Bold", class_name="text-7xl ml-8 font-bold"),
+                    direction="row",
+                    justify_content="between",
+                ),
+                rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
+                direction="column",
+                id="peso",
+            ),
+            direction="column",
+        ),
+        
+        # Sitio web
         rx.box(
             rx.box(
                 rx.text("Sitio web", class_name="text-7xl"),
@@ -87,11 +184,22 @@ def index() -> rx.Component:
                         ),
                         rx.box(
                             rx.button("Comenzar ahora", class_name="mr-4", size="sm"),
-                            rx.button("Github", class_name="ml-4", size="sm", variant="secondary"),
+                            rx.button(
+                                "Github",
+                                class_name="ml-4",
+                                size="sm",
+                                variant="secondary",
+                            ),
                             direction="row",
                             margin_y="12",
                         ),
-                        rx.image("/cap.png", alt="hero", width=600, height=600, class_name="rounded-3xl mt-6"),
+                        rx.image(
+                            "/cap.png",
+                            alt="hero",
+                            width=600,
+                            height=600,
+                            class_name="rounded-3xl mt-6",
+                        ),
                         direction="column",
                         align_items="center",
                         margin_top="6",
