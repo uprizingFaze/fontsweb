@@ -514,6 +514,38 @@ def index() -> rx.Component:
     )
 
 
-app = rx.App(style=styles.BASE_STYLE)
+class MyApp(rx.App):
+    def __init__(self, **kwargs):
+        self.font_name = rx.Var("")
+        super().__init__(**kwargs)
+
+    def handleInputChange(self, event):
+        self.font_name.value = event.target.value
+
+    def handleSubmit(self, event):
+        event.preventDefault()
+        self.stylesheets = [
+            f"https://fonts.googleapis.com/css2?family={self.font_name.value}:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap",
+        ]
+
+    def render(self):
+        return rx.form(
+            rx.input(
+                type="text",
+                placeholder="Nombre de la fuente por ejemplo: Sedan SC",
+                value=self.font_name.value,
+                on_change=self.handleInputChange,
+            ),
+            rx.button("Ver", type="submit"),
+            direction="row",
+            align_items="center",
+            space_x="2",
+            margin_y="8rem",
+            max_width="sm",
+            on_submit=self.handleSubmit,
+        )
+
+
+app = MyApp(style=styles.BASE_STYLE)
 app.add_page(index)
 app.compile()
