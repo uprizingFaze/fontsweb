@@ -4,12 +4,42 @@ import reflex as rx
 import fontsweb.styles.styles as styles
 
 
+def navbar():
+    return rx.hstack(
+        rx.hstack(
+            rx.image(src="/favicon.ico", width="2em"),
+            rx.heading("Fonts Web", font_size="2em"),
+        ),
+        rx.spacer(),
+        rx.menu.root(
+            rx.menu.content(
+                rx.menu.item("Home"),
+                rx.menu.item("Preview"),
+                rx.menu.item("Sitio web"),
+                rx.menu.item("Populares"),
+            ),
+        ),
+        position="fixed",
+        top="0px",
+        background_color="lightgray",
+        padding="1em",
+        height="4em",
+        width="100%",
+        z_index="5",
+    )
+
+
 class State(rx.State):
     pass
 
 
 def index() -> rx.Component:
     return rx.box(
+        navbar(),
+        rx.container(
+            padding_top="6em",
+            max_width="60em",
+        ),
         rx.text(
             "by uprizingFaze",
             class_name="text-xl text-neutral-700 ml-4 max-w-screen-xl mx-auto",
@@ -452,7 +482,7 @@ def index() -> rx.Component:
             ),
             class_name="Eater.className",
         ),
-        #Footer
+        # Footer
         rx.box(
             rx.box(
                 rx.box(
