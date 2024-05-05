@@ -10,7 +10,10 @@ class State(rx.State):
 
 def index() -> rx.Component:
     return rx.box(
-        rx.text("by uprizingFaze", class_name="text-xl text-neutral-700 ml-4"),
+        rx.text(
+            "by uprizingFaze",
+            class_name="text-xl text-neutral-700 ml-4 max-w-screen-xl mx-auto",
+        ),
         rx.box(
             rx.text(
                 "FONTS", class_name="text-9xl text-neutral-700 text-center font-bold"
@@ -75,9 +78,22 @@ def index() -> rx.Component:
             gap="2",
             padding="2",
         ),
+        rx.box(
+            rx.box(
+                class_name="ring-1 ring-black/30 dark:ring-white/30 rounded-3xl p-4",
+                children=[
+                    rx.text("Abc", class_name="color-secondary"),
+                    rx.text(
+                        "Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn ñ Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz Ñ @ $ ¿? ¡! # % &",
+                        class_name="text-2xl md:text-5xl",
+                    ),
+                ],
+            ),
+            class_name="px-2",
+        ),
         # Numeros
         rx.box(
-            rx.text("Numeros", class_name="text-7xl text-center py-24"),
+            rx.text("Numbers", class_name="text-7xl text-center py-24"),
             rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
             rx.box(
                 rx.text("0 1 2 3 4 5 6 7 8 9", class_name="text-7xl ml-8"),
@@ -93,34 +109,78 @@ def index() -> rx.Component:
         ),
         # Tamaños
         rx.box(
-            rx.text("Tamaños", class_name="text-7xl text-center py-24"),
+            rx.text("Size", class_name="text-7xl text-center py-24"),
             rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
             rx.box(
                 rx.text("Text-9xl", class_name="text-9xl ml-8"),
-                rx.box(
-                    rx.text("Size: 128px", class_name="text-xl"),
-                    direction="column",
-                ),
+                rx.text("Size: 128px", class_name="flex flex-col text-xl mr-8"),
                 direction="row",
                 justify_content="between",
             ),
             rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
             rx.box(
                 rx.text("Text-8xl", class_name="text-8xl ml-8"),
-                rx.box(
-                    rx.text("Size: 96px", class_name="text-xl"),
-                    direction="column",
-                ),
+                rx.text("Size: 96px", class_name="flex flex-col text-xl mr-8"),
                 direction="row",
                 justify_content="between",
             ),
+            rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
+            rx.box(
+                rx.text("Text-7xl", class_name="text-7xl ml-8"),
+                rx.text("Size: 72px", class_name="flex flex-col text-xl mr-8"),
+                direction="row",
+                justify_content="between",
+            ),
+            rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
+            rx.box(
+                rx.text("Text-6xl", class_name="text-6xl ml-8"),
+                rx.text("Size: 60px", class_name="flex flex-col text-xl mr-8"),
+                direction="row",
+                justify_content="between",
+            ),
+            rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
+            rx.box(
+                rx.text("Text-5xl", class_name="text-5xl ml-8"),
+                rx.text("Size: 48px", class_name="flex flex-col text-xl mr-8"),
+                direction="row",
+                justify_content="between",
+            ),
+            rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
+            rx.box(
+                rx.text("Text-4xl", class_name="text-4xl ml-8"),
+                rx.text("Size: 36px", class_name="flex flex-col text-xl mr-8"),
+                direction="row",
+                justify_content="between",
+            ),
+            rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
+            rx.box(
+                rx.text("Text-3xl", class_name="text-3xl ml-8"),
+                rx.text("Size: 30px", class_name="flex flex-col text-xl mr-8"),
+                direction="row",
+                justify_content="between",
+            ),
+            rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
+            rx.box(
+                rx.text("Text-2xl", class_name="text-2xl ml-8"),
+                rx.text("Size: 24px", class_name="flex flex-col text-xl mr-8"),
+                direction="row",
+                justify_content="between",
+            ),
+            rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
+            rx.box(
+                rx.text("Text-xl", class_name="text-xl ml-8"),
+                rx.text("Size: 20px", class_name="flex flex-col text-xl mr-8"),
+                direction="row",
+                justify_content="between",
+            ),
+            rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
             direction="column",
             id="size",
         ),
-        #Estilo
+        # Estilo
         rx.box(
             rx.box(
-                rx.text("Estilo", class_name="text-7xl text-center py-24"),
+                rx.text("Style", class_name="text-7xl text-center py-24"),
                 rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
                 rx.box(
                     rx.text("Italic", class_name="text-7xl ml-8 italic"),
@@ -163,53 +223,144 @@ def index() -> rx.Component:
             ),
             direction="column",
         ),
-        
         # Sitio web
         rx.box(
             rx.box(
-                rx.text("Sitio web", class_name="text-7xl"),
-                direction="column",
-                align_items="center",
+                rx.text("Sitio web", class_name="text-7xl text-center"),
                 padding_y="24",
             ),
             rx.box(
                 rx.box(
-                    rx.text("by uprizingFaze", class_name="py-12"),
                     rx.box(
-                        rx.text("Inicia tus web apps", class_name="text-5xl"),
-                        rx.text("usando Reflex", class_name="text-5xl"),
-                        rx.text(
-                            "Crea Aplicaciones web mas rápido. Crea toda tu aplicación en un solo idioma. No se preocupe por escribir API para conectar su frontend y backend.",
-                            class_name="mt-8 text-neutral-700",
+                        rx.box(
+                            rx.box(class_name="h-3 w-3 bg-red-500 rounded-full mr-2"),
+                            rx.box(
+                                class_name="h-3 w-3 bg-yellow-500 rounded-full mr-2"
+                            ),
+                            rx.box(class_name="h-3 w-3 bg-green-500 rounded-full"),
+                            direction="row",
+                            align_items="center",
+                            justify_content="start",
+                            padding="2",
+                            class_name="bg-white/10 rounded-t-xl",
                         ),
                         rx.box(
-                            rx.button("Comenzar ahora", class_name="mr-4", size="sm"),
-                            rx.button(
-                                "Github",
-                                class_name="ml-4",
-                                size="sm",
-                                variant="secondary",
+                            rx.box(
+                                rx.box(
+                                    rx.text(
+                                        "by uprizingFaze",
+                                        class_name="text-white dark:text-black",
+                                    ),
+                                    class_name="pt-8 pb-2",
+                                ),
+                                rx.box(
+                                    rx.box(
+                                        rx.text(
+                                            "Inicia tus web apps",
+                                            class_name="text-5xl font-semibold text-white dark:text-black max-w-md",
+                                        ),
+                                        rx.text(
+                                            "usando Reflex",
+                                            class_name="text-5xl font-semibold text-white dark:text-black max-w-md",
+                                        ),
+                                        rx.text(
+                                            "Crea Aplicaciones web mas rápido",
+                                            class_name="mt-8 text-slate-300 dark:text-slate-700 max-w-md",
+                                        ),
+                                        rx.box(
+                                            rx.text(
+                                                "Comenzar ahora", class_name="mr-4 sm"
+                                            ),
+                                            rx.text("GitHub", class_name="ml-4 sm"),
+                                            direction="row",
+                                            class_name="mt-12",
+                                        ),
+                                        direction="column",
+                                        class_name="mb-4 md:mb-0",
+                                    ),
+                                    rx.box(
+                                        rx.image(
+                                            src="reflex_dark.svg",
+                                            width=300,
+                                            height=300,
+                                            alt="Reflex",
+                                        ),
+                                        class_name="px-2 pt-24",
+                                    ),
+                                    direction="row",
+                                    class_name="mt-6 pl-4",
+                                ),
+                                class_name="ring-1 ring-white/30 dark:ring-white/30 rounded-b-3xl p-4 bg-black dark:bg-white",
                             ),
-                            direction="row",
-                            margin_y="12",
+                            rx.box(
+                                rx.box(
+                                    rx.text("Fácil de Aprender", class_name="text-3xl"),
+                                    rx.text(
+                                        "Crea y comparte tu primera aplicación en minutos.",
+                                        class_name="text-3xl",
+                                    ),
+                                    rx.hr(
+                                        class_name="my-4 mx-5 border-black dark:border-white"
+                                    ),
+                                ),
+                                rx.box(
+                                    rx.text(
+                                        "Fácil",
+                                        class_name="bg-black text-white dark:bg-white dark:text-black text-xl rounded-xl p-2",
+                                    ),
+                                    rx.text(
+                                        "Flexible",
+                                        class_name="bg-black text-white dark:bg-white dark:text-black text-xl rounded-xl p-2",
+                                    ),
+                                    rx.text(
+                                        "Codigo abierto",
+                                        class_name="bg-black text-white dark:bg-white dark:text-black text-xl rounded-xl p-2",
+                                    ),
+                                    rx.text(
+                                        "Ágil",
+                                        class_name="bg-black text-white dark:bg-white dark:text-black text-xl rounded-xl p-2",
+                                    ),
+                                    direction="row",
+                                    class_name="grid grid-cols-2 md:grid-cols-4 gap-4",
+                                ),
+                                rx.box(
+                                    rx.box(
+                                        rx.text(
+                                            "Es momento de iniciar tu siguiente proyecto utilizando Reflex",
+                                            class_name="text-3xl text-white dark:text-black px-12 pt-12",
+                                        ),
+                                        rx.box(
+                                            rx.text(
+                                                "Comenzar ahora", class_name="mr-4 sm"
+                                            ),
+                                            rx.text("GitHub", class_name="ml-4 sm"),
+                                            direction="row",
+                                            class_name="py-6",
+                                        ),
+                                        class_name="bg-black dark:bg-white rounded-t-3xl w-full",
+                                    ),
+                                    direction="column",
+                                    align_items="center",
+                                    justify_content="center",
+                                    class_name="text-center pt-12 w-full",
+                                ),
+                                direction="column",
+                                align_items="center",
+                                justify_content="center",
+                                class_name="text-center pt-12",
+                            ),
+                            direction="column",
+                            class_name="px-1",
                         ),
-                        rx.image(
-                            "/cap.png",
-                            alt="hero",
-                            width=600,
-                            height=600,
-                            class_name="rounded-3xl mt-6",
-                        ),
-                        direction="column",
-                        align_items="center",
-                        margin_top="6",
+                        class_name="ring-1 ring-black/30 dark:ring-white/30 rounded-t-xl",
                     ),
-                    direction="column",
-                    align_items="center",
-                    class_name="ring-1 ring-neutral-300 rounded-3xl p-4 bg-gradient-to-bl from-white to-neutral-200",
+                    class_name="px-2",
                 ),
+                id="web-site",
             ),
+            direction="column",
         ),
+        # Fuentes populares
         rx.text("Fuentes populares", class_name="text-7xl text-center py-24"),
         rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
         rx.box(
@@ -289,9 +440,9 @@ def index() -> rx.Component:
         rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
         rx.box(
             rx.box(
-                rx.text("Jacquard 24", class_name="text-7xl ml-8 font-semibold"),
+                rx.text("Eater", class_name="text-7xl ml-8 font-semibold"),
                 rx.box(
-                    rx.text("Font: Jacquard 24"),
+                    rx.text("Font: Eater"),
                     rx.text("Style: SemiBolt"),
                     direction="column",
                     class_name="text-xs mr-8",
@@ -299,7 +450,30 @@ def index() -> rx.Component:
                 direction="row",
                 justify_content="between",
             ),
-            class_name="jacquard_24.className",
+            class_name="Eater.className",
+        ),
+        #Footer
+        rx.box(
+            rx.box(
+                rx.box(
+                    rx.text(
+                        "by ",
+                        rx.text(
+                            "uprizingFaze", class_name="text-black dark:text-white"
+                        ),
+                        " proyecto para el ",
+                        rx.text("Holamundo.day", class_name="Moure"),
+                        " de MoureDev",
+                        direction="column",
+                        align_items="center",
+                        class_name="text-xl font-light color-secondary",
+                    ),
+                    direction="column",
+                    align_items="center",
+                ),
+                class_name="ring-1 ring-black/30 dark:ring-white/30 rounded-2xl p-4",
+            ),
+            class_name="pb-16 mt-24 px-2",
         ),
         rx.hr(class_name="my-4 mx-5 border-black dark:border-white"),
         direction="column",
