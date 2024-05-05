@@ -18,6 +18,10 @@ def navbar():
                 rx.menu.item("Sitio web"),
                 rx.menu.item("Populares"),
             ),
+            rx.color_mode_cond(
+                light=rx.image(src="light.svg", height="4em"),
+                dark=rx.image(src="dark.svg", height="4em"),
+            ),
         ),
         position="fixed",
         top="0px",
