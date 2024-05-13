@@ -1,5 +1,7 @@
 # Fonts Web
 
+#### IMPORTANTE: Esta web se esta migrando a NextJs
+
 Aplicación web para previsualizar fuentes de [Google Fonts](https://fonts.google.com/).
 
 ![Descripción de la imagen](assets/md_1.png)
